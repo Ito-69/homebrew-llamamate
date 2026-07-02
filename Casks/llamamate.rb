@@ -4,8 +4,7 @@ cask "llamamate" do
 
   url "https://github.com/Ito-69/llama.cpp_install_on_macos/releases/download/v#{version}/LlamaMate-#{version}.dmg"
   name "LlamaMate"
-  desc "macOS menu bar app for llama.cpp — browse, download, run local LLMs"
-
+  desc "Menu bar app for llama.cpp — browse, download, run local LLMs"
   homepage "https://github.com/Ito-69/llama.cpp_install_on_macos"
 
   livecheck do
@@ -13,13 +12,15 @@ cask "llamamate" do
     strategy :github_latest_release
   end
 
+  depends_on macos: :ventura
+
   app "LlamaMate.app"
 
   zap trash: [
     "~/Library/Application Support/LlamaMate",
     "~/Library/LaunchAgents/com.llama.cpp.server.plist",
-    "~/Library/Logs/llama-server.log",
     "~/Library/Logs/llama-server.err.log",
+    "~/Library/Logs/llama-server.log",
   ]
 
   caveats <<~EOS
