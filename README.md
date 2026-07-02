@@ -2,6 +2,16 @@
 
 Install [LlamaMate](https://github.com/Ito-69/llama.cpp_install_on_macos) via Homebrew Cask.
 
+## Screenshots
+
+| Menu bar | Models window |
+|----------|---------------|
+| ![Menu bar](docs/llamaMate.png) | ![Models](docs/models.png) |
+
+| Server Settings |
+|-----------------|
+| ![Server Settings](docs/settings.png) |
+
 ## Install
 
 ```bash
