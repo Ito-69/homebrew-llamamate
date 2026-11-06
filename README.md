@@ -33,4 +33,19 @@ brew upgrade --cask llamamate
 brew uninstall --cask llamamate
 ```
 
-This removes the app, LaunchAgent, logs, and Application Support directory. Models and llama.cpp binaries in `~/.local/bin` and `~/models` are kept — use the in-app `Uninstall...` menu item to remove them as well.
+This quits the app, unloads the `com.llama.cpp.server` LaunchAgent, and removes
+`LlamaMate.app`.
+
+To also remove configuration, logs, and preferences, use `--zap`:
+
+```bash
+brew uninstall --zap --cask llamamate
+```
+
+`--zap` additionally deletes `~/Library/Application Support/LlamaMate`, the
+LaunchAgent plist, the server logs, `~/Library/Preferences/com.llamamate.app.plist`,
+`~/.config/llama`, and `~/.local/bin/llama-server-start.sh`.
+
+Downloaded models in `~/models` and the llama.cpp binaries/libraries in
+`~/.local/bin` and `~/.local/lib` are **never** removed by Homebrew. To delete
+those too, use the in-app `Uninstall…` menu item before uninstalling the cask.

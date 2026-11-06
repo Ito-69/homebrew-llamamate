@@ -16,17 +16,24 @@ cask "llamamate" do
 
   app "LlamaMate.app"
 
+  uninstall launchctl: "com.llama.cpp.server",
+            quit:      "com.llamamate.app"
+
   zap trash: [
+    "~/.config/llama",
+    "~/.local/bin/llama-server-start.sh",
     "~/Library/Application Support/LlamaMate",
     "~/Library/LaunchAgents/com.llama.cpp.server.plist",
     "~/Library/Logs/llama-server.err.log",
     "~/Library/Logs/llama-server.log",
+    "~/Library/Preferences/com.llamamate.app.plist",
   ]
 
   caveats <<~EOS
     LlamaMate is a menu bar app for llama.cpp. After install:
       • Open LlamaMate from /Applications
-      • First launch may require right-click → Open (ad-hoc signed)
+      • First launch: if macOS blocks the app, open System Settings →
+        Privacy & Security and click "Open Anyway" (the app is ad-hoc signed)
       • Click "Install" in the welcome dialog to download llama.cpp + a model
   EOS
 end
