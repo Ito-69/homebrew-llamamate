@@ -1,6 +1,6 @@
 cask "llamamate" do
-  version "2.5.1"
-  sha256 "1c95f568410a2d6648ed4b0237df4a1d3b516bf9ae051d3dac553bdebc270b3b"
+  version "2.5.2"
+  sha256 "19065f5366d175cf8ebed2920815498cecd5801e13b46c09b111fe9d9fc7c973"
 
   url "https://github.com/Ito-69/llama.cpp_install_on_macos/releases/download/v#{version}/LlamaMate-#{version}.dmg"
   name "LlamaMate"
